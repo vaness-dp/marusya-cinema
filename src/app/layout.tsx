@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Play } from 'next/font/google'
 
+import Layout from '@/components/layout/Layout'
+
 import './globals.css'
 
 const play = Play({
@@ -27,7 +29,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${play.variable} ${openSans.variable} antialiased`}>{children}</body>
+			<body className={`${play.variable} ${openSans.variable} antialiased`}>
+				<Layout>{children}</Layout>
+			</body>
 		</html>
 	)
 }

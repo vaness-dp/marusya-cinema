@@ -1,9 +1,19 @@
 @import 'tailwindcss';
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--color-bg-black: #000000;
+	--color-bg-dark: #272424b3; /* b3 = 70% */
+	--color-accent-blue: #2787f5e6; /* e6 = 90% */
+	--color-accent-purple: #a393f5e6; /* e6 = 90% */
 
+	--bg-gradient: linear-gradient(
+		135deg,
+		var(--color-accent-blue) 0%,
+		var(--color-accent-purple) 100%
+	);
+}
+
+@theme {
 	--font-sans: var(--font-open-sans), Arial, Helvetica, sans-serif;
 	--font-play: var(--font-play), Arial, Helvetica, sans-serif;
 
@@ -15,27 +25,22 @@
 	--text-2xl: 40px;
 	--text-3xl: 48px;
 	--text-4xl: 60px;
+
+	--color-secondary: #393b3c;
+	--color-error: #ff7575;
 }
 
-@theme {
-	fontfamily.sans: var(--font-open-sans);
-	fontfamily.play: var(--font-play);
-
-	fontsize.xs: var(--text-xs);
-	fontsize.sm: var(--text-sm);
-	fontsize.base: var(--text-base);
-	fontsize.lg: var(--text-lg);
-	fontsize.xl: var(--text-xl);
-	fontsize.2xl: var(--text-2xl);
-	fontsize.3xl: var(--text-3xl);
-	fontsize.4xl: var(--text-4xl);
-
-	colors.background: var(--background);
-	colors.foreground: var(--foreground);
+@layer utilities {
 }
 
 body {
-	background: var(--background);
-	color: var(--foreground);
+	min-height: 100vh;
+	background:
+		linear-gradient(180deg, #000 0%, #272424b2), linear-gradient(135deg, #2787f5e5 0%, #a393f5e5);
+	color: #fff;
 	font-family: var(--font-play), Helvetica, sans-serif;
+}
+
+button {
+	@apply cursor-pointer;
 }
