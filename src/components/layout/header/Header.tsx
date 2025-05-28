@@ -3,8 +3,9 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { ProfileSkeleton } from '@/components/layout/header/profile/ProfileSkeleton'
+
 import { Logo } from '@/ui/Logo'
-import { ProfileSkeleton } from '@/ui/ProfileSkeleton'
 
 import { useProfile } from '@/hooks/useProfile'
 
@@ -15,7 +16,7 @@ import { SearchField } from './search/SearchField'
 
 export function Header() {
 	const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
-	const { profile, isLoading, isError, error } = useProfile()
+	const { profile, isLoading, isError } = useProfile()
 
 	const isAuth = !isError && !!profile
 
@@ -31,10 +32,10 @@ export function Header() {
 				<nav className="mr-10">
 					<ul className="flex items-center gap-10">
 						<li className="text-xl leading-8">
-							<Link href="/">Главная</Link>
+							<Link href="/">Home</Link>
 						</li>
 						<li className="text-xl leading-8">
-							<Link href="/genres">Жанры</Link>
+							<Link href="/genres">Genres</Link>
 						</li>
 					</ul>
 				</nav>
@@ -52,7 +53,7 @@ export function Header() {
 							className="flex-shrink-0 text-xl leading-8 whitespace-nowrap"
 							onClick={() => setIsOpenModal(!isOpenModal)}
 						>
-							Войти
+							Login
 						</button>
 					)}
 					{isOpenModal && <AuthModal onClose={() => setIsOpenModal(false)} />}

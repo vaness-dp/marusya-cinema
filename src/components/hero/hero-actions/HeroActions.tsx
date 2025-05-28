@@ -5,8 +5,8 @@ import { HeroActionButton } from './HeroActionButton'
 export function HeroActions() {
 	return (
 		<div className="flex items-center gap-4">
-			<HeroActionButton variant="primary">Трейлер</HeroActionButton>
-			<HeroActionButton variant="secondary">О фильме</HeroActionButton>
+			<HeroActionButton variant="primary">Trailer</HeroActionButton>
+			<HeroActionButton variant="secondary">About</HeroActionButton>
 			<HeroActionButton variant="icon">
 				<Heart size={24} />
 			</HeroActionButton>

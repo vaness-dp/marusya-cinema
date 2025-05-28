@@ -8,7 +8,7 @@ export function SearchField() {
 			</span>
 			<input
 				type="search"
-				placeholder="Поиск"
+				placeholder="Search"
 				className="bg-secondary h-12 w-full rounded-[8px] border-none py-3 pr-4 pl-12 text-base leading-6 outline-none placeholder:text-white/20"
 			/>
 		</div>

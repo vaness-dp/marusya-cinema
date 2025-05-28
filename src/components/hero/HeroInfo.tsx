@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import { Star } from 'lucide-react'
 
-import { formatRuntime } from '../../../utils/formatRuntime'
+import { formatRuntime } from '@/utils/formatRuntime'
 
 interface Props {
 	rating?: number
