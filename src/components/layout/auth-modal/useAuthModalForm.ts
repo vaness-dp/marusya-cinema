@@ -1,4 +1,4 @@
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import type { SubmitHandler, UseFormReset } from 'react-hook-form'
 
@@ -12,9 +12,14 @@ export function useAuthModalForm(
 	isLogin: boolean,
 	onClose: () => void
 ) {
+	const queryClient = useQueryClient()
+
 	const { mutate, isPending } = useMutation({
 		mutationKey: [type],
-		mutationFn: (data: IAuthData) => authService.main(type, data)
+		mutationFn: (data: IAuthData) => authService.main(type, data),
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ['profile'] })
+		}
 	})
 
 	const onSubmit: SubmitHandler<IAuthForm> = async data => {

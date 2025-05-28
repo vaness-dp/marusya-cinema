@@ -4,13 +4,20 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 import { Logo } from '@/ui/Logo'
+import { ProfileSkeleton } from '@/ui/ProfileSkeleton'
+
+import { useProfile } from '@/hooks/useProfile'
 
 import { AuthModal } from '../auth-modal/AuthModal'
 
+import { HeaderProfile } from './profile/HeaderProfile'
 import { SearchField } from './search/SearchField'
 
 export function Header() {
 	const [isOpenModal, setIsOpenModal] = useState<boolean>(false)
+	const { profile, isLoading, isError, error } = useProfile()
+
+	const isAuth = !isError && !!profile
 
 	return (
 		<header className="flex h-24 items-center py-6">
@@ -36,12 +43,18 @@ export function Header() {
 					<div className="mr-20 flex-1">
 						<SearchField />
 					</div>
-					<button
-						className="flex-shrink-0 text-xl leading-8 whitespace-nowrap"
-						onClick={() => setIsOpenModal(!isOpenModal)}
-					>
-						Войти
-					</button>
+					{isLoading ? (
+						<ProfileSkeleton />
+					) : isAuth ? (
+						<HeaderProfile />
+					) : (
+						<button
+							className="flex-shrink-0 text-xl leading-8 whitespace-nowrap"
+							onClick={() => setIsOpenModal(!isOpenModal)}
+						>
+							Войти
+						</button>
+					)}
 					{isOpenModal && <AuthModal onClose={() => setIsOpenModal(false)} />}
 				</div>
 			</div>
