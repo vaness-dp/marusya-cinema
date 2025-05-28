@@ -2,11 +2,11 @@
 
 import { useQuery } from '@tanstack/react-query'
 
-import { HeroDescription } from './HeroDescription'
-import { HeroImage } from './HeroImage'
-import { HeroInfo } from './HeroInfo'
-import { HeroSkeleton } from './HeroSkeleton'
-import { HeroActions } from './hero-actions/HeroActions'
+import { HeroDescription } from './components/HeroDescription'
+import { HeroImage } from './components/HeroImage'
+import { HeroInfo } from './components/HeroInfo'
+import { HeroSkeleton } from './components/HeroSkeleton'
+import { HeroActions } from './components/hero-actions/HeroActions'
 import { movieService } from '@/services/movie.service'
 
 export function Hero() {
