@@ -3,6 +3,8 @@ import { Open_Sans, Play } from 'next/font/google'
 
 import Layout from '@/components/layout/Layout'
 
+import { Providers } from '@/providers/Providers'
+
 import './globals.css'
 
 const play = Play({
@@ -30,7 +32,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${play.variable} ${openSans.variable} antialiased`}>
-				<Layout>{children}</Layout>
+				<Providers>
+					<Layout>{children}</Layout>
+				</Providers>
 			</body>
 		</html>
 	)

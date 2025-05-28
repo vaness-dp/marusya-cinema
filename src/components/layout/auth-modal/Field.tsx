@@ -5,7 +5,7 @@ import type { UseFormRegisterReturn } from 'react-hook-form'
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
 	placeholder: string
-	error?: string
+	error?: boolean
 	className?: string
 	Icon: LucideIcon
 	registration: UseFormRegisterReturn
@@ -16,6 +16,7 @@ export function Field({ placeholder, error, className, Icon, registration, ...pr
 		<div
 			className={cn(
 				'flex min-w-85 items-center rounded-[8px] border border-black/40 bg-transparent p-4',
+				error && 'border-error',
 				className
 			)}
 		>
@@ -25,10 +26,7 @@ export function Field({ placeholder, error, className, Icon, registration, ...pr
 			/>
 			<input
 				placeholder={placeholder}
-				className={cn(
-					'flex-1 border-transparent bg-transparent text-base text-black outline-none placeholder:text-black/40',
-					error && 'border-error'
-				)}
+				className="flex-1 bg-transparent text-base text-black outline-none placeholder:text-black/40"
 				{...registration}
 				{...props}
 			/>

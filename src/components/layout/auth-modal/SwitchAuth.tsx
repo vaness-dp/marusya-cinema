@@ -1,8 +1,6 @@
-import type { Dispatch, SetStateAction } from 'react'
-
 interface Props {
 	isLogin: boolean
-	setIsLogin: Dispatch<SetStateAction<boolean>>
+	setIsLogin: (value: boolean) => void
 }
 
 export function SwitchAuth({ isLogin, setIsLogin }: Props) {

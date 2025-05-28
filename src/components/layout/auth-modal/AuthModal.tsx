@@ -1,93 +1,77 @@
 'use client'
 
-import cn from 'clsx'
-import { Lock, Mail, UserRound } from 'lucide-react'
-import Image from 'next/image'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
-import { ButtonSubmit } from './ButtonSubmit'
+import { Logo } from '@/ui/Logo'
+
+import { AuthFormBlock } from './AuthFormBlock'
 import { CloseButton } from './CloseButton'
-import { Field } from './Field'
+import { SuccessBlock } from './SuccessBlock'
 import { SwitchAuth } from './SwitchAuth'
+import type { IAuthForm } from './auth-modal.types'
+import { useAuthModalForm } from './useAuthModalForm'
 
 export function AuthModal({ onClose }: { onClose: () => void }) {
 	const [isLogin, setIsLogin] = useState(true)
+	const [success, setSuccess] = useState(false)
 
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-		reset
-	} = useForm({ mode: 'onChange' })
+		reset,
+		watch
+	} = useForm<IAuthForm>({ mode: 'onChange' })
+
+	const { onSubmit, isLoading } = useAuthModalForm(
+		isLogin ? 'auth/login' : 'user',
+		reset,
+		setSuccess,
+		isLogin,
+		onClose
+	)
+	const handleSwitchAuth = (login: boolean) => {
+		setIsLogin(login)
+		reset()
+	}
+
+	const handleSuccessLogin = () => {
+		setSuccess(false)
+		setIsLogin(true)
+		reset()
+	}
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
 			<div className="relative flex max-w-105 flex-col items-center rounded-3xl bg-white px-10 py-16">
 				<CloseButton onClick={onClose} />
 
-				{/* Logo */}
-				<div className="mb-10">
-					<Image
-						src="/images/auth-logo.png"
-						alt="logo"
-						width={157}
-						height={35}
-					/>
-				</div>
-
-				<form className="mb-6">
-					<>
-						<Field
-							Icon={Mail}
-							type="email"
-							registration={register('email', { required: '' })}
-							placeholder="Электронная почта"
-							className="mb-3"
-						/>
-						{!isLogin && (
-							<>
-								<Field
-									Icon={UserRound}
-									type="text"
-									registration={register('name', { required: '' })}
-									placeholder="Имя"
-									className="mb-3"
-								/>
-								<Field
-									Icon={UserRound}
-									type="text"
-									registration={register('surname', { required: '' })}
-									placeholder="Фамилия"
-									className="mb-3"
-								/>
-							</>
-						)}
-						<Field
-							Icon={Lock}
-							type="password"
-							registration={register('password', { required: '' })}
-							placeholder="Пароль"
-							className={cn(isLogin ? 'mb-6' : 'mb-3')}
-						/>
-						{!isLogin && (
-							<Field
-								Icon={Lock}
-								type="password"
-								registration={register('confirmPassword', { required: '' })}
-								placeholder="Подвердить пароль"
-								className="mb-6"
-							/>
-						)}
-					</>
-
-					<ButtonSubmit>{isLogin ? 'Войти' : 'Создать аккаунт'}</ButtonSubmit>
-				</form>
-
-				<SwitchAuth
-					isLogin={isLogin}
-					setIsLogin={setIsLogin}
+				<Logo
+					src="/images/auth-logo.png"
+					width={132.13}
+					height={29.5}
+					className="mb-10"
 				/>
+
+				{success ? (
+					<SuccessBlock onLogin={handleSuccessLogin} />
+				) : (
+					<>
+						<AuthFormBlock
+							isLogin={isLogin}
+							register={register}
+							errors={errors}
+							watch={watch}
+							onSubmit={handleSubmit(onSubmit)}
+							isLoading={isLoading}
+						/>
+						<SwitchAuth
+							isLogin={isLogin}
+							setIsLogin={handleSwitchAuth}
+						/>
+					</>
+				)}
 			</div>
 		</div>
 	)

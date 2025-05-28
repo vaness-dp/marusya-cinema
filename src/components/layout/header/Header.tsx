@@ -3,9 +3,10 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
+import { Logo } from '@/ui/Logo'
+
 import { AuthModal } from '../auth-modal/AuthModal'
 
-import { Logo } from './Logo'
 import { SearchField } from './search/SearchField'
 
 export function Header() {
@@ -17,7 +18,12 @@ export function Header() {
 
 	return (
 		<header className="flex items-center py-6">
-			<Logo className="mr-20" />
+			<Logo
+				src="/images/logo.png"
+				width={144}
+				height={32}
+				className="mr-20 min-h-8 min-w-36"
+			/>
 			<nav className="mr-10">
 				<ul className="flex items-center">
 					<li className="mr-10 text-xl leading-8">
