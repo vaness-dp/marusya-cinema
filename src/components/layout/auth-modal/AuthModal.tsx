@@ -44,13 +44,13 @@ export function AuthModal({ onClose }: { onClose: () => void }) {
 
 	return (
 		<div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-			<div className="relative flex max-w-105 flex-col items-center rounded-3xl bg-white px-10 py-16">
+			<div className="relative flex max-w-105 flex-col items-center justify-center rounded-3xl bg-white px-10 py-16">
 				<CloseButton onClick={onClose} />
 
 				<Logo
 					src="/images/auth-logo.png"
-					width={132.13}
-					height={29.5}
+					width={134}
+					height={30}
 					className="mb-10"
 				/>
 
