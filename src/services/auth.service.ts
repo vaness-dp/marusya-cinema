@@ -4,11 +4,17 @@ import { axiosClassic } from '@/api/axios'
 
 class AuthService {
 	async main(type: 'auth/login' | 'user', data: IAuthData) {
-		const response = await axiosClassic.post<IAuthData>(`/${type}`, data, {
+		const response = await axiosClassic.post(`/${type}`, data, {
 			headers: {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			}
 		})
+		return response
+	}
+
+	async logout() {
+		const response = await axiosClassic.get('/auth/logout')
+		window.location.href = '/'
 		return response
 	}
 }

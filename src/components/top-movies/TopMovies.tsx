@@ -20,7 +20,7 @@ export function TopMovies() {
 	return (
 		<section className="pt-10 pb-30">
 			<Heading>Top 10 movies</Heading>
-			<div className="grid grid-cols-5 gap-x-16 gap-y-12">
+			<div className="grid grid-cols-5 gap-x-10 gap-y-16">
 				{isLoading ? (
 					<SkeletonLoader
 						count={10}
