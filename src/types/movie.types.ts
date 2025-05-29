@@ -26,3 +26,19 @@ export interface IMovieResponse {
 	homepage: string
 	status: string
 }
+
+export interface IMovieRandomResponse {
+	tmdbRating: number
+	releaseYear: number
+	genres: string[]
+	runtime: number
+	title: string
+	plot: string
+	backdropUrl: string
+}
+
+export interface IMovieCardResponse {
+	id: number
+	title: string
+	posterUrl: string
+}

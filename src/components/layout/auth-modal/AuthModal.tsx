@@ -48,7 +48,7 @@ export function AuthModal({ onClose }: { onClose: () => void }) {
 				<CloseButton onClick={onClose} />
 
 				<Logo
-					src="/images/auth-logo.png"
+					src="/images/logo-black.png"
 					width={134}
 					height={30}
 					className="mb-10"

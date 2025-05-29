@@ -3,9 +3,8 @@
 import Link from 'next/link'
 import { useState } from 'react'
 
-import { ProfileSkeleton } from '@/components/layout/header/profile/ProfileSkeleton'
-
 import { Logo } from '@/ui/Logo'
+import { SkeletonLoader } from '@/ui/SkeletonLoader'
 
 import { useProfile } from '@/hooks/useProfile'
 
@@ -24,7 +23,7 @@ export function Header() {
 		<header className="flex h-24 items-center py-6">
 			<div className="mx-auto flex h-12 w-full max-w-320 items-center px-0">
 				<Logo
-					src="/images/logo.png"
+					src="/images/logo-white.png"
 					width={144}
 					height={32}
 					className="mr-20 min-h-8 min-w-36 flex-shrink-0"
@@ -45,7 +44,7 @@ export function Header() {
 						<SearchField />
 					</div>
 					{isLoading ? (
-						<ProfileSkeleton />
+						<SkeletonLoader className="h-8 w-32 rounded-full" />
 					) : isAuth ? (
 						<HeaderProfile />
 					) : (

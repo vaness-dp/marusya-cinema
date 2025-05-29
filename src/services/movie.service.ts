@@ -1,10 +1,14 @@
 import { axiosClassic } from '@/api/axios'
 
-import type { IMovieResponse } from '@/types/movies.types'
+import type { IMovieCardResponse, IMovieRandomResponse } from '@/types/movie.types'
 
 class MovieService {
 	async getRandom() {
-		return axiosClassic.get<IMovieResponse>('/movie/random')
+		return axiosClassic.get<IMovieRandomResponse>('/movie/random')
+	}
+
+	async getTop10() {
+		return axiosClassic.get<IMovieCardResponse[]>('/movie/top10')
 	}
 }
 

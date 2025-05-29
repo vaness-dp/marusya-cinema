@@ -13,7 +13,7 @@ export function HeroImage({ src, alt }: Props) {
 					src={src}
 					alt={alt || 'Image'}
 					fill
-					style={{ objectFit: 'cover' }}
+					className="object-cover"
 					priority
 					sizes="(max-width: 768px) 100vw, 680px"
 				/>
