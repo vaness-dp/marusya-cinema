@@ -26,11 +26,15 @@
 	--text-3xl: 48px;
 	--text-4xl: 60px;
 
+	--color-accent: #dc5dfc;
 	--color-secondary: #393b3c;
 	--color-error: #ff7575;
 }
 
 @layer utilities {
+	.active-item {
+		@apply border-accent border-b-[1.5px] px-0 py-2;
+	}
 }
 
 body {

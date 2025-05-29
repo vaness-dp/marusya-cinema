@@ -9,7 +9,7 @@ import './globals.css'
 
 const play = Play({
 	variable: '--font-play',
-	subsets: ['latin', 'cyrillic'],
+	subsets: ['latin'],
 	weight: ['400', '700']
 })
 

@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { ImagePlaceholder } from '@/ui/ImagePlaceholder'
+
 interface Props {
 	src?: string
 	alt?: string
@@ -18,9 +20,7 @@ export function HeroImage({ src, alt }: Props) {
 					sizes="(max-width: 768px) 100vw, 680px"
 				/>
 			) : (
-				<div className="flex h-full w-full items-center justify-center bg-gray-800 text-white">
-					No image
-				</div>
+				<ImagePlaceholder />
 			)}
 		</div>
 	)

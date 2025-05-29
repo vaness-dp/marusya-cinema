@@ -32,7 +32,7 @@ export function HeroSkeleton() {
 			</div>
 
 			{/* Right - Poster */}
-			<SkeletonLoader className="relative ml-6 min-h-138 min-w-170 flex-shrink-0 overflow-hidden rounded-2xl" />
+			<SkeletonLoader className="relative ml-6 h-138 w-170 flex-shrink-0 overflow-hidden rounded-2xl" />
 		</section>
 	)
 }
