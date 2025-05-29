@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { useState } from 'react'
 
 import { Logo } from '@/ui/Logo'
@@ -10,6 +9,7 @@ import { useProfile } from '@/hooks/useProfile'
 
 import { AuthModal } from '../auth-modal/AuthModal'
 
+import { HeaderMenu } from './menu/HeaderMenu'
 import { HeaderProfile } from './profile/HeaderProfile'
 import { SearchField } from './search/SearchField'
 
@@ -28,23 +28,15 @@ export function Header() {
 					height={32}
 					className="mr-20 min-h-8 min-w-36 flex-shrink-0"
 				/>
-				<nav className="mr-10">
-					<ul className="flex items-center gap-10">
-						<li className="text-xl leading-8">
-							<Link href="/">Home</Link>
-						</li>
-						<li className="text-xl leading-8">
-							<Link href="/genres">Genres</Link>
-						</li>
-					</ul>
-				</nav>
+
+				<HeaderMenu />
 
 				<div className="flex min-w-[0] flex-1 items-center">
 					<div className="mr-20 flex-1">
 						<SearchField />
 					</div>
 					{isLoading ? (
-						<SkeletonLoader className="h-8 w-32 rounded-full" />
+						<SkeletonLoader className="h-8 max-w-32 rounded-full" />
 					) : isAuth ? (
 						<HeaderProfile />
 					) : (

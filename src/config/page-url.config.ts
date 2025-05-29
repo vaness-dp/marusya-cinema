@@ -1,16 +1,7 @@
-class PublicPage {
+class Pages {
 	HOME = '/'
-
-	GENRES = `${this.HOME}/genres`
-}
-
-class AccountPage {
+	GENRES = '/genres'
 	ACCOUNT = '/account'
-
-	SETTINGS = `${this.ACCOUNT}/settings`
 }
 
-export const PAGE = {
-	PUBLIC: new PublicPage(),
-	ACCOUNT: new AccountPage()
-}
+export const PAGE = new Pages()
