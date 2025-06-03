@@ -13,7 +13,7 @@ export function MovieCardBadge({ number, className }: Props) {
 				className
 			)}
 		>
-			<span className="text-xl font-bold text-[#6a5dc2]">{number}</span>
+			<span className="text-accent-purple-dark text-xl font-bold">{number}</span>
 		</div>
 	)
 }

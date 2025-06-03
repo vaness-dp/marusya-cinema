@@ -15,7 +15,7 @@ export function Heading({ children, isPageHeading = false, isH1 = false, classNa
 				<h1
 					className={twMerge(
 						'mb-4 text-3xl leading-14 font-bold',
-						isPageHeading && 'mb-16 text-2xl leading-12 font-bold',
+						isPageHeading && 'mb-16 text-3xl leading-14 font-bold',
 						className
 					)}
 				>

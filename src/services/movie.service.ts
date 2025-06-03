@@ -29,6 +29,10 @@ class MovieService {
 	async removeFromFavorites(movieId: string) {
 		return axiosClassic.delete(`/favorites/${movieId}`)
 	}
+
+	async getGenres() {
+		return axiosClassic.get<{ genre: string[] }>('/movie/genres')
+	}
 }
 
 export const movieService = new MovieService()

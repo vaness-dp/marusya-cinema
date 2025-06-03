@@ -34,7 +34,7 @@ export function MovieCard({
 		<Link
 			href={href}
 			className={cn(
-				'group relative flex flex-col items-center rounded-2xl border border-white/25 bg-gray-800 shadow-[0_0_80px_0_#ffffff54]',
+				'group shadow-card relative flex flex-col items-center rounded-2xl border border-white/25 bg-gray-800',
 				className
 			)}
 			style={{
