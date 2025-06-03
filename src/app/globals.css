@@ -29,6 +29,7 @@
 	--color-accent: #dc5dfc;
 	--color-secondary: #393b3c;
 	--color-error: #ff7575;
+	--color-accent-purple-light: #b4a9ff;
 }
 
 @layer utilities {

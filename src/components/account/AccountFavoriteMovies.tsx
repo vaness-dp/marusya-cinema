@@ -24,6 +24,7 @@ export function AccountFavoriteMovies() {
 			) : (
 				movies.map((movie, i) => (
 					<MovieCard
+						key={movie.id}
 						id={movie.id}
 						title={movie.title}
 						posterUrl={movie.posterUrl}

@@ -5,10 +5,17 @@ interface Props {
 	children: ReactNode
 	variant?: 'primary' | 'secondary' | 'icon'
 	onClick?: () => void
+	disabled?: boolean
 	className?: string
 }
 
-export function HeroActionButton({ children, variant = 'primary', onClick, className }: Props) {
+export function HeroActionButton({
+	children,
+	variant = 'primary',
+	onClick,
+	disabled,
+	className
+}: Props) {
 	return (
 		<button
 			type="button"
@@ -23,6 +30,7 @@ export function HeroActionButton({ children, variant = 'primary', onClick, class
 				className
 			)}
 			onClick={onClick}
+			disabled={disabled}
 		>
 			{children}
 		</button>

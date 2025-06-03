@@ -28,6 +28,7 @@ export interface IMovieResponse {
 }
 
 export interface IMovieRandomResponse {
+	id: number
 	tmdbRating: number
 	releaseYear: number
 	genres: string[]
@@ -35,6 +36,7 @@ export interface IMovieRandomResponse {
 	title: string
 	plot: string
 	backdropUrl: string
+	isFavorite: boolean
 }
 
 export interface IMovieCardResponse {
