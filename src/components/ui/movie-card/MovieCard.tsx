@@ -1,3 +1,5 @@
+'use client'
+
 import cn from 'clsx'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -5,6 +7,7 @@ import Link from 'next/link'
 import { ImagePlaceholder } from '../ImagePlaceholder'
 
 import { MovieCardBadge } from './MovieCardBadge'
+import { MovieCardButton } from './MovieCardButton'
 
 interface Props {
 	id: number | string
@@ -14,6 +17,7 @@ interface Props {
 	href?: string
 	children?: React.ReactNode
 	className?: string
+	onRemove?: () => void
 }
 
 export function MovieCard({
@@ -23,13 +27,14 @@ export function MovieCard({
 	badgeNumber,
 	href = `/movies/${id}`,
 	children,
-	className
+	className,
+	onRemove
 }: Props) {
 	return (
 		<Link
 			href={href}
 			className={cn(
-				'relative flex flex-col items-center rounded-2xl border border-white/25 bg-gray-800 shadow-[0_0_80px_0_#ffffff54]',
+				'group relative flex flex-col items-center rounded-2xl border border-white/25 bg-gray-800 shadow-[0_0_80px_0_#ffffff54]',
 				className
 			)}
 			style={{
@@ -38,6 +43,7 @@ export function MovieCard({
 			}}
 		>
 			{badgeNumber !== undefined && <MovieCardBadge number={badgeNumber} />}
+			{onRemove && <MovieCardButton onClick={onRemove} />}
 
 			{posterUrl ? (
 				<div className="relative h-full w-full">

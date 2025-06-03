@@ -14,7 +14,7 @@ import { Tabs } from './Tabs'
 import { TABS_DATA } from './tabs.data'
 
 export function Account() {
-	const { profile, isLoading } = useProfile()
+	const { profile } = useProfile()
 	const [activeTab, setActiveTab] = useState('favorites')
 	const fullName = [profile?.name, profile?.surname].filter(Boolean).join(' ')
 

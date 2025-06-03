@@ -30,7 +30,7 @@ export function AccountSettingsInfo({ fullName, email, initials }: Props) {
 	})
 
 	return (
-		<div className="max-w-120.5">
+		<div className="min-w-120.5">
 			<InfoItem
 				icon={initials}
 				label="Full name"

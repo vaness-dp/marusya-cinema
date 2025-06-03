@@ -3,8 +3,9 @@
 import { useQuery } from '@tanstack/react-query'
 
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
+import { MovieCard } from '@/ui/movie-card/MovieCard'
 
-import { MovieCard } from '../ui/movie-card/MovieCard'
+import { useRemoveFavorites } from '@/hooks/useRemoveFavorites'
 
 import { movieService } from '@/services/movie.service'
 
@@ -13,6 +14,8 @@ export function AccountFavoriteMovies() {
 		queryKey: ['favorites'],
 		queryFn: () => movieService.getFavorites().then(res => res.data)
 	})
+
+	const { removeFromFavorites } = useRemoveFavorites()
 
 	return (
 		<div className="grid grid-cols-5 gap-x-10 gap-y-16">
@@ -28,7 +31,7 @@ export function AccountFavoriteMovies() {
 						id={movie.id}
 						title={movie.title}
 						posterUrl={movie.posterUrl}
-						badgeNumber={i + 1}
+						onRemove={() => removeFromFavorites(movie.id)}
 					/>
 				))
 			)}
