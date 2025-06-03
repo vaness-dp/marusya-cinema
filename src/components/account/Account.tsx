@@ -8,6 +8,7 @@ import { useProfile } from '@/hooks/useProfile'
 
 import { getInitials } from '@/utils/getInitials'
 
+import { AccountFavoriteMovies } from './AccountFavoriteMovies'
 import { AccountSettingsInfo } from './AccountSettingsInfo'
 import { Tabs } from './Tabs'
 import { TABS_DATA } from './tabs.data'
@@ -26,10 +27,7 @@ export function Account() {
 				onTabChange={setActiveTab}
 			/>
 			<div className="mt-16">
-				{activeTab === 'favorites' && (
-					// Здесь будет список избранных фильмов
-					<div className="grid grid-cols-5 gap-x-10 gap-y-16">Favorite movies go here</div>
-				)}
+				{activeTab === 'favorites' && <AccountFavoriteMovies />}
 				{activeTab === 'settings' && (
 					<AccountSettingsInfo
 						initials={getInitials(fullName)}

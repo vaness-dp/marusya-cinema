@@ -10,6 +10,10 @@ class MovieService {
 	async getTop10() {
 		return axiosClassic.get<IMovieCardResponse[]>('/movie/top10')
 	}
+
+	async getFavorites() {
+		return axiosClassic.get<IMovieCardResponse[]>('/favorites')
+	}
 }
 
 export const movieService = new MovieService()
