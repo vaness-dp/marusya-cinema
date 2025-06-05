@@ -1,3 +1,5 @@
+import { useRouter } from 'next/navigation'
+
 import { useRandomMovie } from '@/hooks/useRandomMovie'
 import { useToggleFavorite } from '@/hooks/useToggleFavorite'
 
@@ -11,6 +13,7 @@ interface Props {
 }
 
 export function HeroActions({ movieId, variant = 'hero' }: Props) {
+	const router = useRouter()
 	const {
 		isOptimisticFavorite,
 		toggleFavorite,
@@ -21,12 +24,21 @@ export function HeroActions({ movieId, variant = 'hero' }: Props) {
 
 	const { refreshMovie, isPending: isRefreshPending } = useRandomMovie()
 
+	const handleAboutClick = () => {
+		router.push(`/movies/${movieId}`)
+	}
+
 	return (
 		<div className="flex items-center gap-4">
 			<HeroActionButton variant="primary">Trailer</HeroActionButton>
 			{variant === 'hero' && (
 				<>
-					<HeroActionButton variant="secondary">About</HeroActionButton>
+					<HeroActionButton
+						variant="secondary"
+						onClick={handleAboutClick}
+					>
+						About
+					</HeroActionButton>
 					<RefreshButton
 						isPending={isRefreshPending}
 						onClick={refreshMovie}
