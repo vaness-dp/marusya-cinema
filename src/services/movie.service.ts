@@ -7,6 +7,16 @@ class MovieService {
 		return axiosClassic.get<IMovieRandomResponse>('/movie/random')
 	}
 
+	async getByGenre(genre: string, page = 1) {
+		return axiosClassic.get<IMovieCardResponse[]>('/movie', {
+			params: {
+				genre,
+				page,
+				count: page === 1 ? 15 : 10 // 15 фильмов на первой странице, +10 при подгрузке
+			}
+		})
+	}
+
 	async getTop10() {
 		return axiosClassic.get<IMovieCardResponse[]>('/movie/top10')
 	}
@@ -31,7 +41,7 @@ class MovieService {
 	}
 
 	async getGenres() {
-		return axiosClassic.get<{ genre: string[] }>('/movie/genres')
+		return axiosClassic.get<string[]>('/movie/genres')
 	}
 
 	async getById(id: string) {
