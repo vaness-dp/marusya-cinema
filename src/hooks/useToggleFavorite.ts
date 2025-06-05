@@ -3,11 +3,11 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { FAVORITES_KEY, useFavoritesData } from './useFavoritesData'
 import { movieService } from '@/services/movie.service'
 
-interface UseToggleFavoriteProps {
+interface Props {
 	movieId: number
 }
 
-export function useToggleFavorite({ movieId }: UseToggleFavoriteProps) {
+export function useToggleFavorite({ movieId }: Props) {
 	const queryClient = useQueryClient()
 	const { data: response } = useFavoritesData()
 	const favorites = response?.data || []
