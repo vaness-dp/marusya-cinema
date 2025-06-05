@@ -1,6 +1,6 @@
 import { axiosClassic } from '@/api/axios'
 
-import type { IMovieCardResponse, IMovieRandomResponse } from '@/types/movie.types'
+import type { IMovieCardResponse, IMovieRandomResponse, IMovieResponse } from '@/types/movie.types'
 
 class MovieService {
 	async getRandom() {
@@ -32,6 +32,10 @@ class MovieService {
 
 	async getGenres() {
 		return axiosClassic.get<{ genre: string[] }>('/movie/genres')
+	}
+
+	async getById(id: string) {
+		return axiosClassic.get<IMovieResponse>(`/movie/${id}`)
 	}
 }
 

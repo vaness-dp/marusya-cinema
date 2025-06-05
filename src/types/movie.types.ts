@@ -36,7 +36,6 @@ export interface IMovieRandomResponse {
 	title: string
 	plot: string
 	backdropUrl: string
-	isFavorite: boolean
 }
 
 export interface IMovieCardResponse {
