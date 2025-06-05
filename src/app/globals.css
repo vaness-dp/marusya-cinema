@@ -47,6 +47,7 @@ body {
 		linear-gradient(180deg, #000 0%, #272424b2), linear-gradient(135deg, #2787f5e5 0%, #a393f5e5);
 	color: #fff;
 	font-family: var(--font-play), Helvetica, sans-serif;
+	font-size: 18px;
 }
 
 button {
