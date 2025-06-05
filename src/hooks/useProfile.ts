@@ -10,7 +10,7 @@ export function useProfile() {
 		refetchInterval: 1800000, // 30 min
 		retry: false,
 		enabled: true,
-		staleTime: 0
+		staleTime: Infinity // для профиля оставляем бесконечное время свежести
 	})
 
 	if (error instanceof AxiosError && error.response?.status === 401) {
