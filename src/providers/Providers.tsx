@@ -12,10 +12,15 @@ export function Providers({ children }: { children: ReactNode }) {
 				defaultOptions: {
 					queries: {
 						retry: 1,
-						refetchOnWindowFocus: false
+						refetchOnWindowFocus: false,
+						refetchOnMount: false,
+						gcTime: 24 * 60 * 60 * 1000,
+						staleTime: 5 * 60 * 1000,
+						networkMode: 'offlineFirst'
 					},
 					mutations: {
-						retry: 1
+						retry: 1,
+						networkMode: 'offlineFirst'
 					}
 				}
 			})
