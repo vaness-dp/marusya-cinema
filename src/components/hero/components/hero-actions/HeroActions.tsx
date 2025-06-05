@@ -1,5 +1,5 @@
-import { useFavorites } from '@/hooks/useFavorites'
 import { useRandomMovie } from '@/hooks/useRandomMovie'
+import { useToggleFavorite } from '@/hooks/useToggleFavorite'
 
 import { FavoriteButton } from './FavoriteButton'
 import { HeroActionButton } from './HeroActionButton'
@@ -7,17 +7,16 @@ import { RefreshButton } from './RefreshButton'
 
 interface Props {
 	movieId: number
-	isFavorite: boolean
+	variant?: 'hero' | 'movie'
 }
 
-export function HeroActions({ movieId, isFavorite }: Props) {
+export function HeroActions({ movieId, variant = 'hero' }: Props) {
 	const {
 		isOptimisticFavorite,
 		toggleFavorite,
 		isPending: isFavoritePending
-	} = useFavorites({
-		movieId,
-		initialIsFavorite: isFavorite
+	} = useToggleFavorite({
+		movieId
 	})
 
 	const { refreshMovie, isPending: isRefreshPending } = useRandomMovie()
@@ -25,15 +24,19 @@ export function HeroActions({ movieId, isFavorite }: Props) {
 	return (
 		<div className="flex items-center gap-4">
 			<HeroActionButton variant="primary">Trailer</HeroActionButton>
-			<HeroActionButton variant="secondary">About</HeroActionButton>
+			{variant === 'hero' && (
+				<>
+					<HeroActionButton variant="secondary">About</HeroActionButton>
+					<RefreshButton
+						isPending={isRefreshPending}
+						onClick={refreshMovie}
+					/>
+				</>
+			)}
 			<FavoriteButton
 				isFavorite={isOptimisticFavorite}
 				isPending={isFavoritePending}
 				onClick={toggleFavorite}
-			/>
-			<RefreshButton
-				isPending={isRefreshPending}
-				onClick={refreshMovie}
 			/>
 		</div>
 	)

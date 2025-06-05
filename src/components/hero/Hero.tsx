@@ -30,10 +30,7 @@ export function Hero() {
 					title={data?.title}
 					plot={data?.plot}
 				/>
-				<HeroActions
-					movieId={data?.id || 0}
-					isFavorite={data?.isFavorite || false}
-				/>
+				<HeroActions movieId={data?.id || 0} />
 			</div>
 			<HeroImage
 				src={data?.backdropUrl}
