@@ -47,6 +47,16 @@ class MovieService {
 	async getById(id: string) {
 		return axiosClassic.get<IMovieResponse>(`/movie/${id}`)
 	}
+
+	async search(title: string) {
+		return axiosClassic.get<IMovieCardResponse[]>('/movie', {
+			params: {
+				title,
+				count: 5,
+				page: 1
+			}
+		})
+	}
 }
 
 export const movieService = new MovieService()
