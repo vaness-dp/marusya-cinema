@@ -4,10 +4,9 @@ import { useQuery } from '@tanstack/react-query'
 
 import { Heading } from '@/ui/Heading'
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
+import { MovieCard } from '@/ui/movie/movie-card/MovieCard'
 
 import type { IMovieCardResponse } from '@/types/movie.types'
-
-import { MovieCard } from '../ui/movie-card/MovieCard'
 
 import { movieService } from '@/services/movie.service'
 

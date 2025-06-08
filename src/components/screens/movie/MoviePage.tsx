@@ -3,10 +3,11 @@
 import { useQuery } from '@tanstack/react-query'
 import { notFound } from 'next/navigation'
 
-import { HeroDescription } from '@/components/hero/components/HeroDescription'
-import { HeroImage } from '@/components/hero/components/HeroImage'
-import { HeroInfo } from '@/components/hero/components/HeroInfo'
 import { HeroActions } from '@/components/hero/components/hero-actions/HeroActions'
+
+import { MovieDescription } from '@/ui/movie/MovieDescription'
+import { MovieImage } from '@/ui/movie/MovieImage'
+import { MovieInfo } from '@/ui/movie/movie-info/MovieInfo'
 
 import { AboutMovie } from './AboutMovie'
 import { MovieSkeleton } from './MovieSkeleton'
@@ -33,13 +34,13 @@ export function MoviePage({ movieId }: Props) {
 		<section className="relative mt-8 flex flex-col justify-center">
 			<div className="flex justify-center">
 				<div className="flex max-w-150 flex-1 flex-col justify-center">
-					<HeroInfo
+					<MovieInfo
 						rating={movie.tmdbRating}
 						year={movie.releaseYear}
 						genres={movie.genres}
 						runtime={movie.runtime}
 					/>
-					<HeroDescription
+					<MovieDescription
 						title={movie.title}
 						plot={movie.plot}
 					/>
@@ -48,7 +49,7 @@ export function MoviePage({ movieId }: Props) {
 						variant="movie"
 					/>
 				</div>
-				<HeroImage
+				<MovieImage
 					src={movie.backdropUrl}
 					alt={movie.title}
 				/>

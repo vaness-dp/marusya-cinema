@@ -1,7 +1,7 @@
 'use client'
 
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
-import { MovieCard } from '@/ui/movie-card/MovieCard'
+import { MovieCard } from '@/ui/movie/movie-card/MovieCard'
 
 import { useFavoritesData } from '@/hooks/useFavoritesData'
 import { useRemoveFavorites } from '@/hooks/useRemoveFavorites'

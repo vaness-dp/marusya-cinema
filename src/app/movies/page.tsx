@@ -1,5 +1,5 @@
 import { Heading } from '@/ui/Heading'
-import { MovieCard } from '@/ui/movie-card/MovieCard'
+import { MovieCard } from '@/ui/movie/movie-card/MovieCard'
 
 import { movieService } from '@/services/movie.service'
 
