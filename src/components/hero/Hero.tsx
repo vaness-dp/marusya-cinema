@@ -4,10 +4,10 @@ import { useQuery } from '@tanstack/react-query'
 
 import { MovieDescription } from '@/ui/movie/MovieDescription'
 import { MovieImage } from '@/ui/movie/MovieImage'
+import { MovieActions } from '@/ui/movie/movie-actions/MovieActions'
 import { MovieInfo } from '@/ui/movie/movie-info/MovieInfo'
 
-import { HeroSkeleton } from './components/HeroSkeleton'
-import { HeroActions } from './components/hero-actions/HeroActions'
+import { HeroSkeleton } from './HeroSkeleton'
 import { movieService } from '@/services/movie.service'
 
 export function Hero() {
@@ -31,7 +31,7 @@ export function Hero() {
 					title={data?.title}
 					plot={data?.plot}
 				/>
-				<HeroActions movieId={data?.id || 0} />
+				<MovieActions movieId={data?.id || 0} />
 			</div>
 			<MovieImage
 				src={data?.backdropUrl}

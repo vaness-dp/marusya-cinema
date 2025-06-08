@@ -1,14 +1,14 @@
 'use client'
 
-import { HeroActionButton } from '@/components/hero/components/hero-actions/HeroActionButton'
+import { MovieActionButton } from '@/ui/movie/movie-actions/MovieActionButton'
 
-interface ILoadMoreButton {
+interface Props {
 	currentPage: number
 	moviesLength: number
 	onClick: () => void
 }
 
-export function LoadMoreButton({ currentPage, moviesLength, onClick }: ILoadMoreButton) {
+export function LoadMoreButton({ currentPage, moviesLength, onClick }: Props) {
 	// Проверяем, есть ли еще фильмы
 	// На первой странице должно быть 15 фильмов
 	// На последующих по 10
@@ -19,12 +19,12 @@ export function LoadMoreButton({ currentPage, moviesLength, onClick }: ILoadMore
 
 	return (
 		<div className="col-span-5 mb-40 flex justify-center">
-			<HeroActionButton
+			<MovieActionButton
 				variant="primary"
 				onClick={onClick}
 			>
 				Show more
-			</HeroActionButton>
+			</MovieActionButton>
 		</div>
 	)
 }

@@ -3,10 +3,9 @@
 import { useQuery } from '@tanstack/react-query'
 import { notFound } from 'next/navigation'
 
-import { HeroActions } from '@/components/hero/components/hero-actions/HeroActions'
-
 import { MovieDescription } from '@/ui/movie/MovieDescription'
 import { MovieImage } from '@/ui/movie/MovieImage'
+import { MovieActions } from '@/ui/movie/movie-actions/MovieActions'
 import { MovieInfo } from '@/ui/movie/movie-info/MovieInfo'
 
 import { AboutMovie } from './AboutMovie'
@@ -44,7 +43,7 @@ export function MoviePage({ movieId }: Props) {
 						title={movie.title}
 						plot={movie.plot}
 					/>
-					<HeroActions
+					<MovieActions
 						movieId={movie.id}
 						variant="movie"
 					/>
