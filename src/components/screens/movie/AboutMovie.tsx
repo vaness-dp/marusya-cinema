@@ -1,5 +1,7 @@
 import { Heading } from '@/ui/Heading'
 
+import { formatMoney } from '@/utils/formatMoney'
+
 import { FilmParameter } from './components/FilmParameter'
 
 interface Props {
@@ -22,11 +24,11 @@ export function AboutMovie({ language, budget, revenue, director, production, aw
 				/>
 				<FilmParameter
 					title="Budget"
-					value={budget}
+					value={formatMoney(budget)}
 				/>
 				<FilmParameter
 					title="Revenue"
-					value={revenue}
+					value={formatMoney(revenue)}
 				/>
 				<FilmParameter
 					title="Director"
