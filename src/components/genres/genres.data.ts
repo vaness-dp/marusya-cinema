@@ -1,48 +1,57 @@
 export interface IGenreItem {
+	name: string
 	link: string
 	image: string
 	title: string
 }
 
-export const GENRES_DATA: IGenreItem[] = [
+export const DISPLAY_GENRES: IGenreItem[] = [
 	{
-		link: '/genres/drama',
+		name: 'drama',
+		title: 'Drama',
 		image: '/images/genres/drama.png',
-		title: 'Drama'
+		link: '/genres/drama'
 	},
 	{
-		link: '/genres/comedy',
+		name: 'comedy',
+		title: 'Comedy',
 		image: '/images/genres/comedy.png',
-		title: 'Comedy'
+		link: '/genres/comedy'
 	},
 	{
-		link: '/genres/detective',
+		name: 'mystery',
+		title: 'Detective',
 		image: '/images/genres/detective.png',
-		title: 'Detective'
+		link: '/genres/mystery'
 	},
 	{
-		link: '/genres/family',
+		name: 'family',
+		title: 'Family',
 		image: '/images/genres/family.png',
-		title: 'Family'
+		link: '/genres/family'
 	},
 	{
-		link: '/genres/historical',
+		name: 'history',
+		title: 'History',
 		image: '/images/genres/historical.png',
-		title: 'Historical'
+		link: '/genres/history'
 	},
 	{
-		link: '/genres/thriller	',
+		name: 'thriller',
+		title: 'Thriller',
 		image: '/images/genres/thriller.png',
-		title: 'Thriller'
+		link: '/genres/thriller'
 	},
 	{
-		link: '/genres/fantasy',
+		name: 'fantasy',
+		title: 'Fantasy',
 		image: '/images/genres/fantasy.png',
-		title: 'Fantasy'
+		link: '/genres/fantasy'
 	},
 	{
-		link: '/genres/adventures',
+		name: 'adventure',
+		title: 'Adventure',
 		image: '/images/genres/adventures.png',
-		title: 'Adventures'
+		link: '/genres/adventure'
 	}
-]
+] as const
