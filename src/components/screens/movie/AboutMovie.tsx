@@ -2,7 +2,7 @@ import { Heading } from '@/ui/Heading'
 
 import { formatMoney } from '@/utils/formatMoney'
 
-import { FilmParameter } from './components/FilmParameter'
+import { FilmParameter } from './FilmParameter'
 
 interface Props {
 	language: string
