@@ -2,6 +2,13 @@ export interface IMovieResponse extends IMovieCardResponse {
 	description: string
 	director: string
 	actors: string[]
+	plot: string
+	backdropUrl: string
+	language: string
+	budget: string
+	revenue: string
+	production: string
+	awardsSummary: string
 }
 
 export interface IMovieRandomResponse {
