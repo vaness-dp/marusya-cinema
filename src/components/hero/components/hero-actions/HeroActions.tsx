@@ -1,7 +1,7 @@
 import { useRouter } from 'next/navigation'
 
-import { useRandomMovie } from '@/hooks/useRandomMovie'
-import { useToggleFavorite } from '@/hooks/useToggleFavorite'
+import { useRandomMovie } from '@/hooks/movies/useRandomMovie'
+import { useToggleFavorite } from '@/hooks/user/useToggleFavorite'
 
 import { FavoriteButton } from './FavoriteButton'
 import { HeroActionButton } from './HeroActionButton'

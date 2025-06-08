@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { useDebounce } from '@/hooks/useDebounce'
+import { useDebounce } from '@/hooks/ui/useDebounce'
 
 import type { IMovieCardResponse } from '@/types/movie.types'
 

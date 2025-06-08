@@ -1,6 +1,6 @@
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
 
-import { useGenres } from '@/hooks/useGenres'
+import { useGenres } from '@/hooks/movies/useGenres'
 
 import { GenresItem } from './GenresItem'
 

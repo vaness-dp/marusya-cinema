@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { useProfile } from '@/hooks/useProfile'
-
+import { useProfile } from './useProfile'
 import { movieService } from '@/services/movie.service'
 
 export const FAVORITES_KEY = ['favorites'] as const

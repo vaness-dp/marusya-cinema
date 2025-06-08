@@ -3,8 +3,8 @@
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
 import { MovieCard } from '@/ui/movie/movie-card/MovieCard'
 
-import { useFavoritesData } from '@/hooks/useFavoritesData'
-import { useRemoveFavorites } from '@/hooks/useRemoveFavorites'
+import { useFavoritesData } from '@/hooks/user/useFavoritesData'
+import { useRemoveFavorites } from '@/hooks/user/useRemoveFavorites'
 
 export function AccountFavoriteMovies() {
 	const { data: response, isLoading } = useFavoritesData()

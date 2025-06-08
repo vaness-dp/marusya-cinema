@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 import { useFavoritesStore } from '@/store/favorites.store'
 
-import { useFavoritesData } from '@/hooks/useFavoritesData'
+import { useFavoritesData } from '@/hooks/user/useFavoritesData'
 
 import type { IMovieCardResponse } from '@/types/movie.types'
 

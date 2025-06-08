@@ -1,6 +1,6 @@
 'use client'
 
-import { useClickOutside } from '@/hooks/useClickOutside'
+import { useClickOutside } from '@/hooks/ui/useClickOutside'
 
 import { SearchInput } from './SearchInput'
 import { SearchModal } from './SearchModal'

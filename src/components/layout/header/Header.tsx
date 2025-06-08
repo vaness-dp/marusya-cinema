@@ -6,7 +6,7 @@ import { useState } from 'react'
 import { Logo } from '@/ui/Logo'
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
 
-import { useProfile } from '@/hooks/useProfile'
+import { useProfile } from '@/hooks/user/useProfile'
 
 import { AuthModal } from '../auth-modal/AuthModal'
 

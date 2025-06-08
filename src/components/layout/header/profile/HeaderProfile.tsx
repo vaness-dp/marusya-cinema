@@ -5,7 +5,7 @@ import { match } from 'path-to-regexp'
 
 import { PAGE } from '@/config/page-url.config'
 
-import { useProfile } from '@/hooks/useProfile'
+import { useProfile } from '@/hooks/user/useProfile'
 
 export function HeaderProfile() {
 	const pathname = usePathname()

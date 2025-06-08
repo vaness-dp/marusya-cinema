@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 import { Heading } from '@/ui/Heading'
 
-import { useProfile } from '@/hooks/useProfile'
+import { useProfile } from '@/hooks/user/useProfile'
 
 import { getInitials } from '@/utils/getInitials'
 

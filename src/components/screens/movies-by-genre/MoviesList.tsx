@@ -3,7 +3,7 @@
 import { SkeletonLoader } from '@/ui/SkeletonLoader'
 import { MovieCard } from '@/ui/movie/movie-card/MovieCard'
 
-import { useMoviesByGenre } from '@/hooks/useMoviesByGenre'
+import { useMoviesByGenre } from '@/hooks/movies/useMoviesByGenre'
 
 import { LoadMoreButton } from './LoadMoreButton'
 
