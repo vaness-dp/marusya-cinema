@@ -6,9 +6,16 @@ interface Props {
 	isH1?: boolean
 	isPageHeading?: boolean
 	className?: string
+	isSearch?: boolean
 }
 
-export function Heading({ children, isPageHeading = false, isH1 = false, className }: Props) {
+export function Heading({
+	children,
+	isPageHeading = false,
+	isH1 = false,
+	className,
+	isSearch = false
+}: Props) {
 	return (
 		<>
 			{isH1 || isPageHeading ? (
@@ -16,6 +23,7 @@ export function Heading({ children, isPageHeading = false, isH1 = false, classNa
 					className={twMerge(
 						'mb-4 text-3xl leading-14 font-bold',
 						isPageHeading && 'mb-16 text-3xl leading-14 font-bold',
+						isSearch && 'mb-0 text-base leading-6',
 						className
 					)}
 				>
