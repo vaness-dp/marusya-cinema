@@ -1,7 +1,7 @@
 import cn from 'clsx'
 import { Heart } from 'lucide-react'
 
-import { HeroActionButton } from './HeroActionButton'
+import { MovieActionButton } from './MovieActionButton'
 
 interface Props {
 	isFavorite: boolean
@@ -11,7 +11,7 @@ interface Props {
 
 export function FavoriteButton({ isFavorite, isPending, onClick }: Props) {
 	return (
-		<HeroActionButton
+		<MovieActionButton
 			variant="icon"
 			onClick={() => !isPending && onClick()}
 			disabled={isPending}
@@ -23,6 +23,6 @@ export function FavoriteButton({ isFavorite, isPending, onClick }: Props) {
 					'hover:stroke-accent-purple-light fill-none stroke-white': !isFavorite
 				})}
 			/>
-		</HeroActionButton>
+		</MovieActionButton>
 	)
 }

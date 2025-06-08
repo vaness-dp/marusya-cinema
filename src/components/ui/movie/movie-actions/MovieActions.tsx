@@ -4,7 +4,7 @@ import { useRandomMovie } from '@/hooks/movies/useRandomMovie'
 import { useToggleFavorite } from '@/hooks/user/useToggleFavorite'
 
 import { FavoriteButton } from './FavoriteButton'
-import { HeroActionButton } from './HeroActionButton'
+import { MovieActionButton } from './MovieActionButton'
 import { RefreshButton } from './RefreshButton'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
 	variant?: 'hero' | 'movie'
 }
 
-export function HeroActions({ movieId, variant = 'hero' }: Props) {
+export function MovieActions({ movieId, variant = 'hero' }: Props) {
 	const router = useRouter()
 	const {
 		isOptimisticFavorite,
@@ -30,15 +30,15 @@ export function HeroActions({ movieId, variant = 'hero' }: Props) {
 
 	return (
 		<div className="flex items-center gap-4">
-			<HeroActionButton variant="primary">Trailer</HeroActionButton>
+			<MovieActionButton variant="primary">Trailer</MovieActionButton>
 			{variant === 'hero' && (
 				<>
-					<HeroActionButton
+					<MovieActionButton
 						variant="secondary"
 						onClick={handleAboutClick}
 					>
 						About
-					</HeroActionButton>
+					</MovieActionButton>
 					<RefreshButton
 						isPending={isRefreshPending}
 						onClick={refreshMovie}

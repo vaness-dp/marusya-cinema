@@ -1,6 +1,6 @@
 import { RefreshCcw } from 'lucide-react'
 
-import { HeroActionButton } from './HeroActionButton'
+import { MovieActionButton } from './MovieActionButton'
 
 interface Props {
 	isPending: boolean
@@ -9,12 +9,12 @@ interface Props {
 
 export function RefreshButton({ isPending, onClick }: Props) {
 	return (
-		<HeroActionButton
+		<MovieActionButton
 			variant="icon"
 			onClick={() => !isPending && onClick()}
 			disabled={isPending}
 		>
 			<RefreshCcw size={24} />
-		</HeroActionButton>
+		</MovieActionButton>
 	)
 }

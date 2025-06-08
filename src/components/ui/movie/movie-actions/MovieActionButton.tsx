@@ -9,7 +9,7 @@ interface Props {
 	className?: string
 }
 
-export function HeroActionButton({
+export function MovieActionButton({
 	children,
 	variant = 'primary',
 	onClick,
