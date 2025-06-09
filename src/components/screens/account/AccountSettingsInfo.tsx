@@ -4,9 +4,9 @@ import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { Mail } from 'lucide-react'
 import { useRouter } from 'next/navigation'
 
-import { PAGE } from '@/config/page-url.config'
+import { Button } from '@/components/layout/auth-modal/Button'
 
-import { Button } from '../layout/auth-modal/Button'
+import { PAGE } from '@/config/page-url.config'
 
 import { InfoItem } from './InfoItem'
 import { authService } from '@/services/auth.service'

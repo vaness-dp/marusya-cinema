@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
-import type { IGenreItem } from '@/components/genres/genres.data'
+import type { IGenreItem } from '@/components/screens/genres/genres.data'
 
 interface Props {
 	item: IGenreItem

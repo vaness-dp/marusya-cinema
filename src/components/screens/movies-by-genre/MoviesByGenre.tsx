@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-import type { IGenreItem } from '@/components/genres/genres.data'
+import type { IGenreItem } from '@/components/screens/genres/genres.data'
 
 import { Heading } from '@/ui/Heading'
 

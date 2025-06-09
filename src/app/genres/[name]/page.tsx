@@ -1,7 +1,7 @@
 import { type Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
-import { DISPLAY_GENRES } from '@/components/genres/genres.data'
+import { DISPLAY_GENRES } from '@/components/screens/genres/genres.data'
 import { MoviesByGenre } from '@/components/screens/movies-by-genre/MoviesByGenre'
 
 import { movieService } from '@/services/movie.service'

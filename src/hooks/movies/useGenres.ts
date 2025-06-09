@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 
-import { DISPLAY_GENRES } from '@/components/genres/genres.data'
+import { DISPLAY_GENRES } from '@/components/screens/genres/genres.data'
 
 import { movieService } from '@/services/movie.service'
 
